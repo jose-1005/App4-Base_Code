@@ -9,32 +9,9 @@
 
 
 <script>
-        var allergy_count = 0;
-        var cold_count = 0;
-	    
-	/* for every answer that counts as a symptom of an allergy, this function adds a 1 to the allergy_count variable,
-		for which the total sum of answers will equal a given value. We will  use this value later.*/ 
-        function allergyAdd(){
-		allergy_count = allergy_count + 1;
-        }
-	// this function does the opposite of the allergyAdd(), but for cold-related symptoms
-        function coldAdd(){
-		cold_count = cold_count + 1;
-        }
-	
-	/* this function represents two things. First is the calculation and variable-storing of a percentage of the probability
-		of having a cold or an allergy, which is done diving the number of symptom-related answers by the total number
-		of questions. The second half of the function represents a change in the inner HTML of a paragraph tag on page 7.
-		it replaces the empty paragraph with a statement stating the answers (this is where the variables from the first half come into play*/
-	function showResults(){
-	var allergy_percentage = (allergy_count/6.0)*100 + ("%");
-	var cold_percentage = (cold_count/6.0)*100 + ("%");
-	
-	var resultText = document.getElementById("results");
-	resultText.innerHTML = "Probability of a cold is " + cold_percentage + "</br> probability of allergies is " + allergy_percentage;
-        }
+    
 
-  </script>
+</script>
 
 <style>	
 .body {
@@ -49,7 +26,7 @@
     left: -100vw;
     overflow-y: auto;
     z-index: 0;
-    background-color: hsl(0,0%,100%);
+    background-color: black;
 }
 
   .page:target {
@@ -60,12 +37,18 @@
 	
 <body>
 <div id="header" class="w3-container w3-flat-carrot">
-	<h1>Cold or Allergies?</h1>
+	<h1>Student Health One Stop: Does your head hurt?</h1>
 </div>	
 	
 <!-- this is a prewritten intro to the app. -->
 <div id="content" class="w3-container">
-	<p>Are you feeling like you might have a cold but wonder if it is allergies. Answer a few short questions to find out!</p>
+	<p> <p> Having a headache is often unsettling. One ocassional might be no deal, but what if you have them ever couple of days? what about every week?<br>
+    <br>
+    Sometimes we can't even sleep, study, or even be with our friends. The point is that we're responsible for monitoring ourselves during these years and times of high stress and quarantine, 
+    but there are often so many different symptoms that going online to so many differently specialized websites only adds more to our headaches. <br>
+    <br>
+    This will be our little student-health one-stop, with everything regarding headaches and above. It's at UT, so it's easy to remember. <br>
+    <br> </p>
 	
 	<a href="#one" class="w3-btn w3-grey w3-round"> Get Started </a>
 	
