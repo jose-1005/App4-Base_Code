@@ -82,7 +82,7 @@
 	</div>
 	
 	<div id="content" class="w3-container">
-		<p>Do you have a fever?</p>
+		<p style="color:white">Do you have a fever?</p>
 			<a href="#three" onclick="coldAdd();" class="w3-button w3-black">Yes</a>
 			<a href="#three" onclick="allergyAdd();" class="w3-button w3-black">No</a>
 	</div>
@@ -94,7 +94,7 @@
 	</div>
 	
 	<div id="content" class="w3-container">
-		<p>Do you have a sore throat?</p>
+		<p style="color:white">Do you have a sore throat?</p>
 			<a href="#four" onclick="coldAdd();" class="w3-button w3-black">Yes</a>
 			<a href="#four" onclick="allergyAdd();" class="w3-button w3-black">No</a>
 	</div>
@@ -107,7 +107,7 @@
 	
 	<!-- one small note: here, despite our answers not being yes or no, the same logic applies as to suiting the classification of symptoms as an allergy or cold. -->
 	<div id="content" class="w3-container">
-		<p>Are your symptoms seasonal or chonic?</p>
+		<p style="color:white">Are your symptoms seasonal or chonic?</p>
 			<a href="#five" onclick="coldAdd();" class="w3-button w3-black">Chonic</a>
 			<a href="#five" onclick="allergyAdd();" class="w3-button w3-black">seasonal</a>
 	</div>
@@ -119,7 +119,7 @@
 	</div>
 	
 	<div id="content" class="w3-container">
-		 <p>does your body ache</p>
+		 <p style="color:white">does your body ache</p>
 		
 		
 		<a href="#six" onclick="coldAdd();" class="w3-button w3-black">Yes</a>
@@ -135,7 +135,7 @@
 	</div>
 	
 	<div id="content" class="w3-container">
-		<p>have any chills?</p>
+		<p style="color:white"have any chills?</p>
 		<a href="#seven" onclick="coldAdd();" class="w3-button w3-black">Yes</a>
 		<a href="#seven" onclick="allergyAdd();" class="w3-button w3-black">No</a>
 	</div>	
@@ -146,16 +146,7 @@
 	Once we click on the button, a function from our script will be prompted. It has already been explained at the top.
 	The paragraph tag will change from not having any content to a phrase that clearly states a percentage or probability 
 	of having a cold or an allergy. -->
-<div class="page" id="seven"> 
-	<!--instead of a question number for a header, we have a page that tells the user that their results are ready-->
-	<div class= "w3-container w3-flat-carrot">
-		<h1>Your results are ready:</h1>
-	</div>
-	
-	<!--this is the site of action. Once pressed, a phrase will be prompted with the appropriate calculations of probability of diagnosis. -->
-	<div id="content class="w2-container>
-		<p id ="results"></p>
-		<button onclick="showResults();" class="w3-button w3-black"> Press here </button>
+
 	</div>
 </div>
 <footer class="w3-bottom w3-container w3-flat-carrot">
