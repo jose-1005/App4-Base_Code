@@ -1,147 +1,185 @@
-<!DOCTYPE html> 
-<html> 
-<!-- The following code has been developed by students and/or researchers of the Freshman Research Initiative DIY Diagnostics Stream at The University of Texas at Austin.  This code is shared for demonstration purposes and should not be considered a product -- it is for entertainment purposes only.  Any user of this code does so at their own risk. Members of the DIY Stream, FRI, and The University of Texas system are not liable for anything related to this code.
- 
-THIS CODE SHOULD NOT BE USED TO DIAGNOSE ANY KIND OF MEDICAL CONDITION.
- 
- 
-Authors in chronological order of contribution:
-Timothy Riedel
-Jose W. Ruiz
- 
-Further Information:
-http://diystream.cns.utexas.edu/
-
-Research Educator:
-Timothy Riedel
-triedel@utexas.edu
- 
-Brief Description of Goal of Code:
-blah, blah, blah,
- 
-Known Issues:
-blah, blah, blah, blah
--->		
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Hello World</title>  
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<link rel="stylesheet" href="w3.css">
+	<link rel="stylesheet" href="w3-colors-flat.css">
+</head>
+	
 <script>
-	
-	
-	
-	
+var doctor = 0;
+var chillOut = 0;
+
+function doctorPlus(){
+    doctor = doctor + 1;
+    return doctor; 
+}
+
+function chillOutPlus(){
+    chillOut = chillOut + 1;
+    return chillOut;
+}
+
+if (chillOutPlus() == 3){
+
+}
+
 </script>
-	
-	
-	
+
 <style>	
-.body {
-     margin: 0em;
-}
 
-.page {
-    width: 100vw;
-    height: 100vh;
-    position: fixed;
-    top: 0;
-    left: -100vw;
-    overflow-y: auto;
-    z-index: 0;
-    background-color: hsl(0,0%,100%);
-}
+    .body {
+        background-color: black;
+        margin: 0em;
+    }
 
-  .page:target {
-    left: 0vw;
-    z-index: 1;
-}
-</style>
-	
-<body>
-<div id="header" class="w3-container w3-flat-carrot">
-	<h1>Student Health One Stop: Does your head hurt? </h1>
-</div>	
+    .main {
+        background-color: black;
+        color: white; 
+    }
 
-<div id="content" class="w3-container">
-	<p> Having a headache is often unsettling. One ocassional might be no deal, but what if you have them ever couple of days? what about every week?<br>
-<br>
-Sometimes we can't even sleep, study, or even be with our friends. The point is that we're responsible for monitoring ourselves during these years and times of high stress and quarantine, but there are often so many different symptoms that going online to so many differently specialized websites only adds more to our headaches. <br>
-<br>
-This will be our little student-health one-stop, with everything regarding headaches and above. It's at UT, so it's easy to remember. <br>
-<br>
-	<a href="#one" class="w3-btn w3-grey w3-round"> Get Started </a>
-	
-	<p>The following code has been developed by students and/or researchers of the Freshman Research Initiative DIY Diagnostics Stream at The University of Texas at 		Austin.  This code is shared for demonstration purposes and should not be considered a product -- it is for entertainment purposes only. Any user of this code 			does so at their own risk. Members of the DIY Stream, FRI, and The University of Texas system are not liable for anything related to this code.</p>
- 	
-	<p>THIS CODE SHOULD NOT BE USED TO DIAGNOSE ANY KIND OF MEDICAL CONDITION.</p>
+    h1 {
+        background-color: black;
+        color: white;
+    }
     
-<div class="page" id="one">
-	
-	<div id="header" class="w3-container w3-flat-carrot">
-		<h1>Question 1</h1>
-	</div>
-    	<div id="content" class="w3-container">
-        	<p> How often has your head hurt? </p>
-			<a href="#two" onclick="coldAdd();" class="w3-button w3-black"> just this once </a>
-			<a href="#two" onclick="allergyAdd();" class="w3-button w3-black"> couple of times a week </a>
-          		<a href="#two" onclick="allergyAdd();" class="w3-button w3-black"> once a day </a>
-            		<a href="#two" onclick="allergyAdd();" class="w3-button w3-black"> several times a day</a>
-           		<a href="#two" onclick="allergyAdd();" class="w3-button w3-black">it rarely stops </a>
-		
-            <p> Note: We will not advise you to self-medicate yourself. We will simply direct you towards what may be the best course of action to take. </p>
-		<img src="https://media.npr.org/assets/img/2015/05/08/headaches_wide-72d69342b6423e169c14ba3023c6a4aac4e71376-s800-c85.jpg" alt="Art" width="500" height="333">
-</div>  
+    .page {
+        background-color: black;
+        color: white;
+        width: 100vw;
+        height: 100vh;
+        position: fixed;
+        top: 0;
+        left: -100vw;
+        overflow-y: auto;
+        z-index: 0;
+    }
     
-<div class="page" id="two">
-	<div class="w3-container w3-flat-carrot">
-		<h1>Question 2</h1>
-	</div>
-	
-	<div id="content" class="w3-container">
-		<p>Does it hurt really bad?</p>
-			<a href="#three" onclick="coldAdd();" class="w3-button w3-black">Very little</a>
-			<a href="#three" onclick="allergyAdd();" class="w3-button w3-black">Quite a bit</a>
-			<a href="#three" onclick="allergyAdd();" class="w3-button w3-black">A lot</a>
-			<a href="#three" onclick="allergyAdd();" class="w3-button w3-black">Quite a bit</a>
-	</div>
-</div>	
+      .page:target {
+        left: 0vw;
+        z-index: 1;
+    }
+    </style>
+        
+    <body>
+    <div id="header" class="w3-container w3-flat-carrot">
+        <h1>Student Health One Stop: Does your head hurt? </h1>
+    </div>	
+    
+    <div id="content" class="w3-container w3-flat-carrot">
+        <p> Having a headache is often unsettling. One ocassional might be no deal, but what if you have them ever couple of days? what about every week?<br>
+    <br>
+    Sometimes we can't even sleep, study, or even be with our friends. The point is that we're responsible for monitoring ourselves during these years and times of high stress and quarantine, 
+    but there are often so many different symptoms that going online to so many differently specialized websites only adds more to our headaches. <br>
+    <br>
+    This will be our little student-health one-stop, with everything regarding headaches and above. It's at UT, so it's easy to remember. <br>
+    <br> 
+        <a href="#one" class="w3-btn w3-grey w3-round"> Get Started </a>
+        
+        <p>The following code has been developed by students and/or researchers of the Freshman Research Initiative DIY Diagnostics Stream at The University of Texas at 		
+            Austin.  This code is shared for demonstration purposes and should not be considered a product -- it is for entertainment purposes only. Any user of this code  
+            does so at their own risk. Members of the DIY Stream, FRI, and The University of Texas system are not liable for anything related to this code.</p>
+         
+        <p>THIS CODE SHOULD NOT BE USED TO DIAGNOSE ANY KIND OF MEDICAL CONDITION.</p>
+        </div>
+    <div class="page" id="one">
+        
+        <div id="header" class="w3-container w3-flat-carrot">
+            <h1>Question 1</h1>
+        </div>
+            <div id="content" class="w3-container">
+                <p> How often has your head hurt? </p>
+                <a href="#two" onClick class="w3-button w3-black"> just this once </a>
+                <a href="#two" class="w3-button w3-black"> couple of times a week </a>
+                <a href="#two" class="w3-button w3-black"> once a day </a>
+                <a href="#two" class="w3-button w3-black"> several times a day</a>
+                <a href="#two" class="w3-button w3-black"> it rarely stops </a>
+            
+                <p> Note: We will not advise you to self-medicate yourself. We will simply direct you towards what may be the best course of action to take. </p>
+            <img src="https://media.npr.org/assets/img/2015/05/08/headaches_wide-72d69342b6423e169c14ba3023c6a4aac4e71376-s800-c85.jpg" alt="Art" width="500" height="333">
+            </div>
+    </div>  
+        
+    <div class="page" id="two">
+        <div class="w3-container w3-flat-carrot">
+            <h1>Question 2</h1>
+        </div>
+        
+        <div id="content" class="w3-container">
+            <p>How bad do you think the pain is?</p>
+                <a href="#three" class="w3-button w3-black">Very little, mostly irritating</a>
+                <a href="#three" class="w3-button w3-black">Considerable enough to ask around</a>
+                <a href="#three" class="w3-button w3-black">Debilitating</a>
+                <a href="#three" class="w3-button w3-black">I can't stand it</a>
+        </div>
+    </div>	
+    
+    <div class="page" id="three">
+        <div class="w3-container w3-flat-carrot">
+            <h1>Question 3</h1>
+        </div>
+        
+        <div id="content" class="w3-container">
+            <p>Are there any activities associated to this sort of pain?</p>
+                <a href="#four" class="w3-button w3-black">Yes</a>
+                <a href="#four" class="w3-button w3-black">No</a>
+        </div>
+    </div>	
+        
+    <div class="page" id="four">
+        <div class="w3-container w3-flat-carrot">
+            <h1>Question 4</h1>
+        </div>
+    
+        <div id="content" class="w3-container">
+             <p>Does your pain keep you from doing your day-to-day activities?</p>
+             <a href="#five" class="w3-button w3-black">Yes</a>
+             <a href="#five" class="w3-button w3-black">It's happened</a>
+             <a href="#five" class="w3-button w3-black">No</a>
+        </div>
+    </div>
+        
+    <div class="page" id="five"> 
+        <div class= "w3-container w3-flat-carrot">
+            <h1>Question 5</h1>
+        </div>
+        
+        <div id="content" class="w3-container">
+            <p>Do you drink enough water, eat well, and exercies?</p>
+            <a href="#five" class="w3-button w3-black">Yes</a>
+            <a href="#five" class="w3-button w3-black">Mostly</a>
+            <a href="#five" class="w3-button w3-black">No</a>
+        </div>
+        
+    </div>
 
-<div class="page" id="three">
-	<div class="w3-container w3-flat-carrot">
-		<h1>Question 3</h1>
-	</div>
-	
-	<div id="content" class="w3-container">
-		<p>Do you have a sore throat?</p>
-			<a href="#four" onclick="coldAdd();" class="w3-button w3-black">Yes</a>
-			<a href="#four" onclick="allergyAdd();" class="w3-button w3-black">No</a>
-	</div>
-</div>	
-	
-<div class="page" id="four">
-	<div class="w3-container w3-flat-carrot">
-		<h1>Question 4</h1>
-	</div>
-	
-	<!-- one small note: here, despite our answers not being yes or no, the same logic applies as to suiting the classification of symptoms as an allergy or cold. -->
-	<div id="content" class="w3-container">
-		<p>Are your symptoms seasonal or chonic?</p>
-			<a href="#five" onclick="coldAdd();" class="w3-button w3-black">Chonic</a>
-			<a href="#five" onclick="allergyAdd();" class="w3-button w3-black">seasonal</a>
-	</div>
-</div>
-	
-<div class="page" id="five"> 
-	<div class= "w3-container w3-flat-carrot">
-		<h1>Question 5</h1>
-	</div>
-	
-	<div id="content" class="w3-container">
-		 <p>does your body ache</p>
-		
-		
-		<a href="#six" onclick="coldAdd();" class="w3-button w3-black">Yes</a>
-		<a href="#six" onclick="allergyAdd();" class="w3-button w3-black">No</a>
-	</div>
-</div>
-    
-    
+    <di`7 v class="page" id="six">
+        <div class="w3-container w3-flat-carrot">
+            <hi>Well, this is what we have to say</hi>
+        </div> 
+
+        <div id="content" class="w3-container">
+            <p> We deeply encourage to go to your physician. <br>
+
+                We don't recommend self-medicating yourself, but we definitely
+                and strongly encourage going to your doctor. <br>
+
+                Based on your answers, we do not think your current
+                situation is healthy. We love when students thrive and feel okay
+                and as fellow longhorns, we look out for each other. <br>
+
+                We think that your situation can best be handled by a physician.
+                Please consider going. 
+            </p>
+        </div>
+
+
+    </div>    
+    <footer class="w3-bottom w3-container w3-flat-carrot">
+        <p>DIY!</p>
+    </footer>
     
 </body>
 </html>
