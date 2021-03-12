@@ -14,21 +14,25 @@
 </script>
 
 <style>	
+h1 {
+	background-color: color: hsl(0, 0%, 0%);
+	color: hsl(0, 100%, 100%);
+}
+	
 .body {
 	margin: 0em;
-        color: hsl(0, 100%, 100%)
+        color: hsl(0, 100%, 100%);
 }
 
 .page {
-    width: 100vw;
-    height: 100vh;
-    position: fixed;
-    top: 0;
-    left: -100vw;
-    overflow-y: auto;
-    z-index: 0;
-    background-color: hsl(0,0%,0%);
-	
+	width: 100vw;
+   	height: 100vh;
+    	position: fixed;
+    	top: 0;
+    	left: -100vw;
+    	overflow-y: auto;
+    	z-index: 0;
+    	background-color: hsl(0,0%,0%);
 }
 
   .page:target {
@@ -60,19 +64,18 @@
 
 <div class="page" id="one">
 	
-	<!-- every first divider under each page (for the first 6 pages) will have a header for a questions's number,
-		every second divider will have the question itself. -->
 	<div id="header" class="w3-container w3-flat-carrot">
-		<h1>Question 1</h1>
+		<h1>How often has your head hurt? </h1>
 	</div>
 	
-	<!-- each question is in the paragraph tag and will have two buttons to press.
-	every button represents two options. Each option represents an answer that will be recorded as either a symptom of a cold or an allergy.
-	I must also mention that each button is also a link to the next page. This is accomplished by setting the button with a linage to an #id. -->
     	<div id="content" class="w3-container">
         	<p>Are your eyes watery or itchy?</p>
-			<a href="#two" onclick="coldAdd();" class="w3-button w3-black">Yes</a>
-			<a href="#two" onclick="allergyAdd();" class="w3-button w3-black">No</a>
+			<a href="#two" onClick class="w3-button w3-black"> just this once </a>
+			<a href="#two" class="w3-button w3-black"> couple of times a week </a>
+                	<a href="#two" class="w3-button w3-black"> once a day </a>
+                	<a href="#two" class="w3-button w3-black"> several times a day</a>
+                	<a href="#two" class="w3-button w3-black"> it rarely stops </a>
+			
     	</div>
 </div>
 	
