@@ -14,21 +14,31 @@
 	var anomalieCount = 0;
 
 	function doctorPlus(){
-		doctor = doctor + 1;
-		return doctor; 
+		doctorCount++;
 	}
 
 	function chillOutPlus(){
-		chillOut = chillOut + 1;
-		return chillOut;
+		chillOutCount++;
 	}
 	
 	function anomaliePlus(){
-		anomalie = anomalie + 1; 
+		anomalieCount++;
 		if (anomalieCount == 2){
+		var resultText = document.getElementById("results");
+		resultText.innerHTML = "We think you've answered enough. We need you go to the doctor right away. <br> 
+			"We think this may be an emergency."
 		}
 	}
+	
+	function showResults(){
+		var doctorPercentage = (doctorCount/5.0)*100 + ("%");
+		var chillOutPercentage = (chillOutCount/5.0)*100 + ("%");
 
+		var resultText = document.getElementById("results");
+		resultText.innerHTML = doctorPercentage + " of our data suggests that you should go to the doctor. " <br>
+			+ chillOutPercentage + " of our data suggests that going to the doctor may not be necessary."
+	
+	}
 
 </script>
 
@@ -90,7 +100,7 @@
 	
     	<div id="content" class="w3-container">
         	<p style="color:white">How often has your head hurt?</p>
-			<a href="#two" onClick "chillOutPlus()" class="w3-button w3-black"> just this once </a>
+			<a href="#two" onClick "chillOutPlus()" "anomaliePlus()" class="w3-button w3-black"> just this once </a>
 			<a href="#two" onClick "chillOutPlus()" class="w3-button w3-black"> couple of times a week </a>
                 	<a href="#two" onClick "chillOutPlus()" class="w3-button w3-black"> once a day </a>
                 	<a href="#two" onClick "doctorPlus()" class="w3-button w3-black"> several times a day</a>
@@ -108,11 +118,11 @@
 	
 	<div id="content" class="w3-container">
 		<p style="color:white:>How bad do you think the pain is?</p>
-			<a href="#three" onClick "chillOutPlus()" onClick "doctorPlus()" class="w3-button w3-black">It's just annoying</a>
-			<a href="#three" onClick "chillOutPlus()" onClick "doctorPlus()" class="w3-button w3-black">Slightly more than annoying, maybe irritating</a>
+			<a href="#three" onClick "chillOutPlus()""doctorPlus()" class="w3-button w3-black">It's just annoying</a>
+			<a href="#three" onClick "chillOutPlus()""doctorPlus()" class="w3-button w3-black">Slightly more than annoying, maybe irritating</a>
 			<a href="#three" onClick "doctorPlus()" class="w3-button w3-black">Considerable enough to ask around</a>
-			<a href="#three" onClick "doctorPlus()" class="w3-button w3-black">Debilitating</a>
-			<a href="#three" onClick "doctorPlus()" class="w3-button w3-black">I can't stand it</a>
+			<a href="#three" onClick "doctorPlus()" "anomaliePlus()" class="w3-button w3-black">Debilitating</a>
+			<a href="#three" onClick "doctorPlus()" "anomaliePlus()" class="w3-button w3-black">I can't stand it</a>
 	</div>
 </div>	
 
@@ -149,9 +159,9 @@
 	
 	<div id="content" class="w3-container">
 		<p style="color:white">Does your pain keep you from doing your day-to-day activities?</p>
-             		<a href="#five" class="w3-button w3-black">Yes</a>
-             		<a href="#five" class="w3-button w3-black">It's happened</a>
-             		<a href="#five" class="w3-button w3-black">No</a>
+             		<a href="#five" onClick "doctorPlus()" class="w3-button w3-black">Yes</a>
+             		<a href="#five" onClick "chillOutPlus()" class="w3-button w3-black">It's happened</a>
+             		<a href="#five" onClick "chillOutPlus()"class="w3-button w3-black">No</a>
 	</div>
 </div>
 		
@@ -162,9 +172,10 @@
 		<h1>Results</h1>
 	</div>
 	
-	<div id="content" class="w3-container">
-		
-	</div>	
+	<div id="content class="w2-container>
+		<p id ="results"></p>
+		<button onclick="showResults" class="w3-button w3-black"> Press here </button>
+	</div>
 </div>
 
 <footer class="w3-bottom w3-container w3-flat-carrot">
