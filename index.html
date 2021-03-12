@@ -9,31 +9,55 @@
 
 
 <script>
-    
+	var doctorCount = 0;
+	var chillOutCount = 0;
+	var anomalieCount = 0;
+
+	function doctorPlus(){
+		doctor = doctor + 1;
+		return doctor; 
+	}
+
+	function chillOutPlus(){
+		chillOut = chillOut + 1;
+		return chillOut;
+	}
+	
+	function anomalie(){
+		if (anomalieCount == 2){
+		}
+	}
+
 
 </script>
 
 <style>	
-.body {
-	margin: 0em;
-        color: hsl(0, 100%, 100%);
-}
+	.body {
+		margin: 0em;
+		color: hsl(0, 100%, 100%);
+	}
 
-.page {
-	width: 100vw;
-   	height: 100vh;
-    	position: fixed;
-    	top: 0;
-    	left: -100vw;
-    	overflow-y: auto;
-    	z-index: 0;
-    	background-color: hsl(0, 0%, 0%);
-}
+	.page {
+		width: 100vw;
+		height: 100vh;
+		position: fixed;
+		top: 0;
+		left: -100vw;
+		overflow-y: auto;
+		z-index: 0;
+		background-color: hsl(0, 0%, 0%);
+	}
 
-  .page:target {
-    left: 0vw;
-    z-index: 1;
-}
+	  .page:target {
+	    left: 0vw;
+	    z-index: 1;
+	}
+		
+	img, object{
+		max-height:90%;
+			max-width:90%;
+	}
+
 </style>
 	
 <body>
@@ -60,16 +84,16 @@
 <div class="page" id="one">
 	
 	<div id="header" class="w3-container w3-flat-carrot">
-		<h1 style="color:white">Question 1</h1>
+		<h1>Question 1</h1>
 	</div>
 	
     	<div id="content" class="w3-container">
         	<p style="color:white">How often has your head hurt?</p>
-			<a href="#two" onClick class="w3-button w3-black"> just this once </a>
-			<a href="#two" class="w3-button w3-black"> couple of times a week </a>
-                	<a href="#two" class="w3-button w3-black"> once a day </a>
-                	<a href="#two" class="w3-button w3-black"> several times a day</a>
-                	<a href="#two" class="w3-button w3-black"> it rarely stops </a>
+		<a href="#two" onClick class="w3-button w3-black"> just this once </a>
+			<a href="#two" onClick class="w3-button w3-black"> couple of times a week </a>
+                	<a href="#two" onClick class="w3-button w3-black"> once a day </a>
+                	<a href="#two" onClick class="w3-button w3-black"> several times a day</a>
+                	<a href="#two" onClick class="w3-button w3-black"> it rarely stops </a>
 			
     	</div>
 </div>
@@ -78,38 +102,40 @@
 	other than that, the same process unfolds until we get to question six. -->
 <div class="page" id="two">
 	<div class="w3-container w3-flat-carrot">
-		<h1 style="color:white">Question 2</h1>
+		<h1>Question 2</h1>
 	</div>
 	
 	<div id="content" class="w3-container">
-		<p style="color:white">Do you have a fever?</p>
-			<a href="#three" onclick="coldAdd();" class="w3-button w3-black">Yes</a>
-			<a href="#three" onclick="allergyAdd();" class="w3-button w3-black">No</a>
+		<p style="color:white:>How bad do you think the pain is?</p>
+			<a href="#three" class="w3-button w3-black">Very little, mostly irritating</a>
+			<a href="#three" class="w3-button w3-black">Considerable enough to ask around</a>
+			<a href="#three" class="w3-button w3-black">Debilitating</a>
+			<a href="#three" class="w3-button w3-black">I can't stand it</a>
 	</div>
 </div>	
 
 <div class="page" id="three">
 	<div class="w3-container w3-flat-carrot">
-		<h1 style="color:white">Question 3</h1>
+		<h1>Question 3</h1>
 	</div>
 	
 	<div id="content" class="w3-container">
-		<p style="color:white">Do you have a sore throat?</p>
-			<a href="#four" onclick="coldAdd();" class="w3-button w3-black">Yes</a>
-			<a href="#four" onclick="allergyAdd();" class="w3-button w3-black">No</a>
+		<p style="color:white">Are there any activities associated to this sort of pain?</p>
+			<a href="#four" class="w3-button w3-black">Yes</a>
+			<a href="#four" class="w3-button w3-black">No</a>
 	</div>
 </div>	
 	
 <div class="page" id="four">
 	<div class="w3-container w3-flat-carrot">
-		<h1 style="color:white">Question 4</h1>
+		<h1>Question 4</h1>
 	</div>
 	
 	<!-- one small note: here, despite our answers not being yes or no, the same logic applies as to suiting the classification of symptoms as an allergy or cold. -->
 	<div id="content" class="w3-container">
-		<p style="color:white">Are your symptoms seasonal or chonic?</p>
-			<a href="#five" onclick="coldAdd();" class="w3-button w3-black">Chonic</a>
-			<a href="#five" onclick="allergyAdd();" class="w3-button w3-black">seasonal</a>
+		<p style="color:white">Are there any activities associated to this pain?</p>
+              		<a href="#four" class="w3-button w3-black">Yes</a>
+                	<a href="#four" class="w3-button w3-black">No</a>
 	</div>
 </div>
 	
@@ -119,11 +145,10 @@
 	</div>
 	
 	<div id="content" class="w3-container">
-		 <p style="color:white">does your body ache</p>
-		
-		
-		<a href="#six" onclick="coldAdd();" class="w3-button w3-black">Yes</a>
-		<a href="#six" onclick="allergyAdd();" class="w3-button w3-black">No</a>
+		<p style="color:white">Does your pain keep you from doing your day-to-day activities?</p>
+             		<a href="#five" class="w3-button w3-black">Yes</a>
+             		<a href="#five" class="w3-button w3-black">It's happened</a>
+            		<a href="#five" class="w3-button w3-black">No</a>
 	</div>
 </div>
 		
@@ -131,24 +156,14 @@
 <!-- this page has the last question to the app, after that it will bring us to page seven, which has a different set of instructions. -->
 <div class="page" id="six"> 
 	<div class= "w3-container w3-flat-carrot">
-		<h1>Question 6</h1>
+		<h1>Results</h1>
 	</div>
 	
 	<div id="content" class="w3-container">
-		<p style="color:white"have any chills?</p>
-		<a href="#seven" onclick="coldAdd();" class="w3-button w3-black">Yes</a>
-		<a href="#seven" onclick="allergyAdd();" class="w3-button w3-black">No</a>
+		
 	</div>	
 </div>
-	
-	
-<!-- this page will first display no content as a paragraph, but will give us a button for us to see our results.
-	Once we click on the button, a function from our script will be prompted. It has already been explained at the top.
-	The paragraph tag will change from not having any content to a phrase that clearly states a percentage or probability 
-	of having a cold or an allergy. -->
 
-	</div>
-</div>
 <footer class="w3-bottom w3-container w3-flat-carrot">
 	<p>DIY!</p>
 </footer>
