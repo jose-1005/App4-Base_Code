@@ -1,185 +1,183 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <title>Hello World</title>  
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="apple-mobile-web-app-capable" content="yes">
-	<link rel="stylesheet" href="w3.css">
-	<link rel="stylesheet" href="w3-colors-flat.css">
-</head>
-	
+<head> 
+      <title>Hello World</title>  
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="apple-mobile-web-app-capable" content="yes">
+      <link rel="stylesheet" href="w3.css">
+      <link rel="stylesheet" href="w3-colors-flat.css">
+   </head> 
+
+
 <script>
-var doctor = 0;
-var chillOut = 0;
+        var allergy_count = 0;
+        var cold_count = 0;
+	    
+	/* for every answer that counts as a symptom of an allergy, this function adds a 1 to the allergy_count variable,
+		for which the total sum of answers will equal a given value. We will  use this value later.*/ 
+        function allergyAdd(){
+		allergy_count = allergy_count + 1;
+        }
+	// this function does the opposite of the allergyAdd(), but for cold-related symptoms
+        function coldAdd(){
+		cold_count = cold_count + 1;
+        }
+	
+	/* this function represents two things. First is the calculation and variable-storing of a percentage of the probability
+		of having a cold or an allergy, which is done diving the number of symptom-related answers by the total number
+		of questions. The second half of the function represents a change in the inner HTML of a paragraph tag on page 7.
+		it replaces the empty paragraph with a statement stating the answers (this is where the variables from the first half come into play*/
+	function showResults(){
+	var allergy_percentage = (allergy_count/6.0)*100 + ("%");
+	var cold_percentage = (cold_count/6.0)*100 + ("%");
+	
+	var resultText = document.getElementById("results");
+	resultText.innerHTML = "Probability of a cold is " + cold_percentage + "</br> probability of allergies is " + allergy_percentage;
+        }
 
-function doctorPlus(){
-    doctor = doctor + 1;
-    return doctor; 
-}
-
-function chillOutPlus(){
-    chillOut = chillOut + 1;
-    return chillOut;
-}
-
-if (chillOutPlus() == 3){
-
-}
-
-</script>
+  </script>
 
 <style>	
+.body {
+     margin: 0em;
+}
 
-    .body {
-        background-color: black;
-        margin: 0em;
-    }
+.page {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: -100vw;
+    overflow-y: auto;
+    z-index: 0;
+    background-color: hsl(0,0%,100%);
+}
 
-    .main {
-        background-color: black;
-        color: white; 
-    }
-
-    h1 {
-        background-color: black;
-        color: white;
-    }
-    
-    .page {
-        background-color: black;
-        color: white;
-        width: 100vw;
-        height: 100vh;
-        position: fixed;
-        top: 0;
-        left: -100vw;
-        overflow-y: auto;
-        z-index: 0;
-    }
-    
-      .page:target {
-        left: 0vw;
-        z-index: 1;
-    }
-    </style>
-        
+  .page:target {
+    left: 0vw;
+    z-index: 1;
+}
+</style>
+	
 <body>
 <div id="header" class="w3-container w3-flat-carrot">
-	<h1>Student Health One Stop: Does your head hurt? </h1>
+	<h1>Cold or Allergies?</h1>
 </div>	
-    
-<div id="content" class="w3-container w3-flat-carrot">
-	<p> Having a headache is often unsettling. One ocassional might be no deal, but what if you have them ever couple of days? what about every week?<br>
-	<br>
-    	Sometimes we can't even sleep, study, or even be with our friends. The point is that we're responsible for monitoring ourselves during these years and times of high stress and quarantine, 
-    	but there are often so many different symptoms that going online to so many differently specialized websites only adds more to our headaches. <br>
-    	<br>
-    	This will be our little student-health one-stop, with everything regarding headaches and above. It's at UT, so it's easy to remember. <br>
-    	<br> 
-        <a href="#one" class="w3-btn w3-grey w3-round"> Get Started </a>
-        
-        <p>The following code has been developed by students and/or researchers of the Freshman Research Initiative DIY Diagnostics Stream at The University of Texas at 		
-            Austin.  This code is shared for demonstration purposes and should not be considered a product -- it is for entertainment purposes only. Any user of this code  
-            does so at their own risk. Members of the DIY Stream, FRI, and The University of Texas system are not liable for anything related to this code.</p>
-         
-        <p>THIS CODE SHOULD NOT BE USED TO DIAGNOSE ANY KIND OF MEDICAL CONDITION.</p>
-        </div>
-    <div class="page" id="one">
-        
-        <div id="header" class="w3-container w3-flat-carrot">
-            <h1>Question 1</h1>
-        </div>
-            <div id="content" class="w3-container">
-                <p> How often has your head hurt? </p>
-                <a href="#two" onClick class="w3-button w3-black"> just this once </a>
-                <a href="#two" class="w3-button w3-black"> couple of times a week </a>
-                <a href="#two" class="w3-button w3-black"> once a day </a>
-                <a href="#two" class="w3-button w3-black"> several times a day</a>
-                <a href="#two" class="w3-button w3-black"> it rarely stops </a>
-            
-                <p> Note: We will not advise you to self-medicate yourself. We will simply direct you towards what may be the best course of action to take. </p>
-            <img src="https://media.npr.org/assets/img/2015/05/08/headaches_wide-72d69342b6423e169c14ba3023c6a4aac4e71376-s800-c85.jpg" alt="Art" width="500" height="333">
-            </div>
-    </div>  
-        
-    <div class="page" id="two">
-        <div class="w3-container w3-flat-carrot">
-            <h1>Question 2</h1>
-        </div>
-        
-        <div id="content" class="w3-container">
-            <p>How bad do you think the pain is?</p>
-                <a href="#three" class="w3-btn w3-grey w3-round">Very little, mostly irritating</a>
-                <a href="#three" class="w3-btn w3-grey w3-round">Considerable enough to ask around</a>
-                <a href="#three" class="w3-btn w3-grey w3-round">Debilitating</a>
-                <a href="#three" class="w3-btn w3-grey w3-round">I can't stand it</a>
-        </div>
-    </div>	
-    
-    <div class="page" id="three">
-        <div class="w3-container w3-flat-carrot">
-            <h1>Question 3</h1>
-        </div>
-        
-        <div id="content" class="w3-container">
-            <p>Are there any activities associated to this sort of pain?</p>
-                <a href="#four" class="w3-btn w3-grey w3-round">Yes</a>
-                <a href="#four" class="w3-btn w3-grey w3-round">No</a>
-        </div>
-    </div>	
-        
-    <div class="page" id="four">
-        <div class="w3-container w3-flat-carrot">
-            <h1>Question 4</h1>
-        </div>
-    
-        <div id="content" class="w3-container">
-             <p>Does your pain keep you from doing your day-to-day activities?</p>
-             <a href="#five" class="w3-btn w3-grey w3-round">Yes</a>
-             <a href="#five" class="w3-btn w3-grey w3-round">It's happened</a>
-             <a href="#five" class="w3-btn w3-grey w3-round">No</a>
-        </div>
-    </div>
-        
-    <div class="page" id="five"> 
-        <div class= "w3-container w3-flat-carrot">
-            <h1>Question 5</h1>
-        </div>
-        
-        <div id="content" class="w3-container">
-            <p>Do you drink enough water, eat well, and exercies?</p>
-            <a href="#five" class="w3-btn w3-grey w3-round">Yes</a>
-            <a href="#five" class="w3-btn w3-grey w3-round">Mostly</a>
-            <a href="#five" class="w3-btn w3-grey w3-round">No</a>
-        </div>
-        
-    </div>
+	
+<!-- this is a prewritten intro to the app. -->
+<div id="content" class="w3-container">
+	<p>Are you feeling like you might have a cold but wonder if it is allergies. Answer a few short questions to find out!</p>
+	
+	<a href="#one" class="w3-btn w3-grey w3-round"> Get Started </a>
+	
+	<p>The following code has been developed by students and/or researchers of the Freshman Research Initiative DIY Diagnostics Stream at The University of Texas at 		Austin.  This code is shared for demonstration purposes and should not be considered a product -- it is for entertainment purposes only. Any user of this code 			does so at their own risk. Members of the DIY Stream, FRI, and The University of Texas system are not liable for anything related to this code.</p>
+ 	
+	<p>THIS CODE SHOULD NOT BE USED TO DIAGNOSE ANY KIND OF MEDICAL CONDITION.</p>
 
-    <div class="page" id="six">
-        <div class="w3-container w3-flat-carrot">
-            <hi>Well, this is what we have to say</hi>
-        </div> 
+<div class="page" id="one">
+	
+	<!-- every first divider under each page (for the first 6 pages) will have a header for a questions's number,
+		every second divider will have the question itself. -->
+	<div id="header" class="w3-container w3-flat-carrot">
+		<h1>Question 1</h1>
+	</div>
+	
+	<!-- each question is in the paragraph tag and will have two buttons to press.
+	every button represents two options. Each option represents an answer that will be recorded as either a symptom of a cold or an allergy.
+	I must also mention that each button is also a link to the next page. This is accomplished by setting the button with a linage to an #id. -->
+    	<div id="content" class="w3-container">
+        	<p>Are your eyes watery or itchy?</p>
+			<a href="#two" onclick="coldAdd();" class="w3-button w3-black">Yes</a>
+			<a href="#two" onclick="allergyAdd();" class="w3-button w3-black">No</a>
+    	</div>
+</div>
+	
+<!-- clicking either of the two previous buttons will lead us to this page, because this page has a page id that we told the buttons to bring us to.
+	other than that, the same process unfolds until we get to question six. -->
+<div class="page" id="two">
+	<div class="w3-container w3-flat-carrot">
+		<h1>Question 2</h1>
+	</div>
+	
+	<div id="content" class="w3-container">
+		<p>Do you have a fever?</p>
+			<a href="#three" onclick="coldAdd();" class="w3-button w3-black">Yes</a>
+			<a href="#three" onclick="allergyAdd();" class="w3-button w3-black">No</a>
+	</div>
+</div>	
 
-        <div id="content" class="w3-container">
-            <p> We deeply encourage to go to your physician. <br>
+<div class="page" id="three">
+	<div class="w3-container w3-flat-carrot">
+		<h1>Question 3</h1>
+	</div>
+	
+	<div id="content" class="w3-container">
+		<p>Do you have a sore throat?</p>
+			<a href="#four" onclick="coldAdd();" class="w3-button w3-black">Yes</a>
+			<a href="#four" onclick="allergyAdd();" class="w3-button w3-black">No</a>
+	</div>
+</div>	
+	
+<div class="page" id="four">
+	<div class="w3-container w3-flat-carrot">
+		<h1>Question 4</h1>
+	</div>
+	
+	<!-- one small note: here, despite our answers not being yes or no, the same logic applies as to suiting the classification of symptoms as an allergy or cold. -->
+	<div id="content" class="w3-container">
+		<p>Are your symptoms seasonal or chonic?</p>
+			<a href="#five" onclick="coldAdd();" class="w3-button w3-black">Chonic</a>
+			<a href="#five" onclick="allergyAdd();" class="w3-button w3-black">seasonal</a>
+	</div>
+</div>
+	
+<div class="page" id="five"> 
+	<div class= "w3-container w3-flat-carrot">
+		<h1>Question 5</h1>
+	</div>
+	
+	<div id="content" class="w3-container">
+		 <p>does your body ache</p>
+		
+		
+		<a href="#six" onclick="coldAdd();" class="w3-button w3-black">Yes</a>
+		<a href="#six" onclick="allergyAdd();" class="w3-button w3-black">No</a>
+	</div>
+</div>
+		
+	
+<!-- this page has the last question to the app, after that it will bring us to page seven, which has a different set of instructions. -->
+<div class="page" id="six"> 
+	<div class= "w3-container w3-flat-carrot">
+		<h1>Question 6</h1>
+	</div>
+	
+	<div id="content" class="w3-container">
+		<p>have any chills?</p>
+		<a href="#seven" onclick="coldAdd();" class="w3-button w3-black">Yes</a>
+		<a href="#seven" onclick="allergyAdd();" class="w3-button w3-black">No</a>
+	</div>	
+</div>
+	
+	
+<!-- this page will first display no content as a paragraph, but will give us a button for us to see our results.
+	Once we click on the button, a function from our script will be prompted. It has already been explained at the top.
+	The paragraph tag will change from not having any content to a phrase that clearly states a percentage or probability 
+	of having a cold or an allergy. -->
+<div class="page" id="seven"> 
+	<!--instead of a question number for a header, we have a page that tells the user that their results are ready-->
+	<div class= "w3-container w3-flat-carrot">
+		<h1>Your results are ready:</h1>
+	</div>
+	
+	<!--this is the site of action. Once pressed, a phrase will be prompted with the appropriate calculations of probability of diagnosis. -->
+	<div id="content class="w2-container>
+		<p id ="results"></p>
+		<button onclick="showResults();" class="w3-button w3-black"> Press here </button>
+	</div>
+</div>
+<footer class="w3-bottom w3-container w3-flat-carrot">
+	<p>DIY!</p>
+</footer>
 
-                We don't recommend self-medicating yourself, but we definitely
-                and strongly encourage going to your doctor. <br>
-
-                Based on your answers, we do not think your current
-                situation is healthy. We love when students thrive and feel okay
-                and as fellow longhorns, we look out for each other. <br>
-
-                We think that your situation can best be handled by a physician.
-                Please consider going. 
-            </p>
-        </div>
-
-
-    </div>    
-    <footer class="w3-bottom w3-container w3-flat-carrot">
-        <p>DIY!</p>
-    </footer>
-    
 </body>
 </html>
