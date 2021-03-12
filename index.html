@@ -23,7 +23,8 @@
 		return chillOut;
 	}
 	
-	function anomalie(){
+	function anomaliePlus(){
+		anomalie = anomalie + 1; 
 		if (anomalieCount == 2){
 		}
 	}
@@ -89,11 +90,11 @@
 	
     	<div id="content" class="w3-container">
         	<p style="color:white">How often has your head hurt?</p>
-		<a href="#two" onClick class="w3-button w3-black"> just this once </a>
-			<a href="#two" onClick class="w3-button w3-black"> couple of times a week </a>
-                	<a href="#two" onClick class="w3-button w3-black"> once a day </a>
-                	<a href="#two" onClick class="w3-button w3-black"> several times a day</a>
-                	<a href="#two" onClick class="w3-button w3-black"> it rarely stops </a>
+			<a href="#two" onClick "chillOutPlus()" class="w3-button w3-black"> just this once </a>
+			<a href="#two" onClick "chillOutPlus()" class="w3-button w3-black"> couple of times a week </a>
+                	<a href="#two" onClick "chillOutPlus()" class="w3-button w3-black"> once a day </a>
+                	<a href="#two" onClick "doctorPlus()" class="w3-button w3-black"> several times a day</a>
+                	<a href="#two" onClick "doctorPlus()" class="w3-button w3-black"> it rarely stops </a>
 			
     	</div>
 </div>
@@ -107,10 +108,11 @@
 	
 	<div id="content" class="w3-container">
 		<p style="color:white:>How bad do you think the pain is?</p>
-			<a href="#three" class="w3-button w3-black">Very little, mostly irritating</a>
-			<a href="#three" class="w3-button w3-black">Considerable enough to ask around</a>
-			<a href="#three" class="w3-button w3-black">Debilitating</a>
-			<a href="#three" class="w3-button w3-black">I can't stand it</a>
+			<a href="#three" onClick "chillOutPlus()" onClick "doctorPlus()" class="w3-button w3-black">It's just annoying</a>
+			<a href="#three" onClick "chillOutPlus()" onClick "doctorPlus()" class="w3-button w3-black">Slightly more than annoying, maybe irritating</a>
+			<a href="#three" onClick "doctorPlus()" class="w3-button w3-black">Considerable enough to ask around</a>
+			<a href="#three" onClick "doctorPlus()" class="w3-button w3-black">Debilitating</a>
+			<a href="#three" onClick "doctorPlus()" class="w3-button w3-black">I can't stand it</a>
 	</div>
 </div>	
 
@@ -121,8 +123,8 @@
 	
 	<div id="content" class="w3-container">
 		<p style="color:white">Are there any activities associated to this sort of pain?</p>
-			<a href="#four" class="w3-button w3-black">Yes</a>
-			<a href="#four" class="w3-button w3-black">No</a>
+			<a href="#four" onClick "chillOutPlus()" class="w3-button w3-black">Yes</a>
+			<a href="#four" onClick "doctorPlus()" class="w3-button w3-black">No</a>
 	</div>
 </div>	
 	
@@ -133,9 +135,10 @@
 	
 	<!-- one small note: here, despite our answers not being yes or no, the same logic applies as to suiting the classification of symptoms as an allergy or cold. -->
 	<div id="content" class="w3-container">
-		<p style="color:white">Are there any activities associated to this pain?</p>
-              		<a href="#four" class="w3-button w3-black">Yes</a>
-                	<a href="#four" class="w3-button w3-black">No</a>
+		<p style="color:white">Do you drink enough water, eat well, and exercies?</p>
+          	  	<a href="#five" onClick "doctorPlus()" class="w3-button w3-black">Yes. quite a lot</a>
+            		<a href="#five" onClick "chillOutPlus()" class="w3-button w3-black">Mostly</a>
+            		<a href="#five" onClick "chillOutPlus()" class="w3-button w3-black">No</a>
 	</div>
 </div>
 	
@@ -148,7 +151,7 @@
 		<p style="color:white">Does your pain keep you from doing your day-to-day activities?</p>
              		<a href="#five" class="w3-button w3-black">Yes</a>
              		<a href="#five" class="w3-button w3-black">It's happened</a>
-            		<a href="#five" class="w3-button w3-black">No</a>
+             		<a href="#five" class="w3-button w3-black">No</a>
 	</div>
 </div>
 		
