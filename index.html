@@ -98,17 +98,10 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 			resultText1.innerHTML = "We urgently need you go to the doctor. You dshould think much about this as this could be an emergency!"
 		}
 		
-		if (doctorCount > anomalieCount){
 			resultText1.innerHTML = doctorPercentage + " of our data suggests that you should go to the doctor. " + chillOutPercentage + " of our data suggests that going to the doctor may not be necessary." <br>
-			+ "We highly suggest you go see your doctor. He or she knows what is best. 
-			
-		} 
-		if (anomalieCount > doctorCount){
-			resultText1.innerHTML = doctorPercentage + " of our data suggests that you should go to the doctor. " + chillOutPercentage + " of our data suggests that going to the doctor may not be necessary." <br>
-			+ " We recommend you take it easy with your classes. Remember to take a small break every once and a while and to always exercise, eat, and drink plenty of water. Naps help, too!."	
-		}
-		
-		
+			+ "We highly suggest you go see your doctor if the data represents more than 50%. He or she knows what is best." <br>
+			"If data suggesting relaxing represents more than 50%, please consider taking breaks when appropriate, and also eating well and drinking plenty of water." <br>
+			"College can be difficult, but you'll do okay. Take it one step at a time."
 	}
 	
 
