@@ -46,8 +46,13 @@
 		var chillOutPercentage = (chillOutCount/(doctorCount + chillOutCount))*100 + ("%");
 		
 		var resultText1 = document.getElementById("results");
-		resultText1.innerHTML = doctorPercentage + " of our data suggests that you should go to the doctor. " + chillOutPercentage + " of our data suggests that going to the doctor may not be necessary.";
-	
+		
+		if (anomalieCount == 2){
+			var resultText1 = document.getElementById("results");
+			resultText1.innerHTML = "what's up"
+		} else {
+			resultText1.innerHTML = doctorPercentage + " of our data suggests that you should go to the doctor. " + chillOutPercentage + " of our data suggests that going to the doctor may not be necessary.";
+		}
 	}
 	
 
