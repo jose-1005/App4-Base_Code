@@ -37,10 +37,6 @@
 	}
 	
 	function showResults(){
-		if (anomalieCount == 2){
-			var resultText1 = document.getElementById("results");
-			resultText1.innerHTML = "what's up"
-		}
 		var divisor = doctorCount + chillOutCount;
 		var doctorPercentage = (doctorCount/(doctorCount + chillOutCount))*100 + ("%");
 		var chillOutPercentage = (chillOutCount/(doctorCount + chillOutCount))*100 + ("%");
