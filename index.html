@@ -42,8 +42,8 @@
 			resultText1.innerHTML = "what's up"
 		}
 		var divisor = doctorCount + chillOutCount;
-		var doctorPercentage = (doctorCount/divisor)*100 + ("%");
-		var chillOutPercentage = (chillOutCount/divisor)*100 + ("%");
+		var doctorPercentage = (doctorCount/(doctorCount + chillOutCount))*100 + ("%");
+		var chillOutPercentage = (chillOutCount/(doctorCount + chillOutCount))*100 + ("%");
 		
 		var resultText1 = document.getElementById("results");
 		resultText1.innerHTML = doctorPercentage + " of our data suggests that you should go to the doctor. " + chillOutPercentage + " of our data suggests that going to the doctor may not be necessary.";
