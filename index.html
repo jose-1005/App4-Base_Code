@@ -29,29 +29,29 @@
 	function addDoctAnomalie(){
 		doctorCount++;
 		anomalieCount++;
-	}	
+	}
+	
 	function addChillAnomalie(){
 		chillOutCount++;
 		anomalieCount++;
-	}
-	
-	
-	function anomalieSay(){
-		if (anomalieCount == 2){
-		var resultText = document.getElementById("results");
-		resultText.innerHTML = "We think you've answered enough. We need you go to the doctor right away. 
-		
 	}
 	
 	function showResults(){
 		var doctorPercentage = (doctorCount/5.0)*100 + ("%");
 		var chillOutPercentage = (chillOutCount/5.0)*100 + ("%");
 		
-
 		var resultText = document.getElementById("results");
 		resultText.innerHTML = doctorPercentage + " of our data suggests that you should go to the doctor. " + chillOutPercentage + " of our data suggests that going to the doctor may not be necessary.";
 		
 	}
+	
+	function anomalieSay(){
+		if (anomalieCount == 2){
+		var resultText = document.getElementById("results");
+		resultText.innerHTML = "We think you've answered enough. We need you go to the doctor right away. 
+		}
+	}
+	
 
 </script>
 
