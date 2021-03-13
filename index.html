@@ -1,4 +1,29 @@
 <!DOCTYPE html>
+<!-- The following code has been developed by students and/or researchers of the Freshman Research Initiative DIY Diagnostics Stream at The University of Texas at Austin.  This code is shared for demonstration purposes and should not be considered a product -- it is for entertainment purposes only.  Any user of this code does so at their own risk. Members of the DIY Stream, FRI, and The University of Texas system are not liable for anything related to this code.
+ 
+THIS CODE SHOULD NOT BE USED TO DIAGNOSE ANY KIND OF MEDICAL CONDITION.
+ 
+ 
+Authors in chronological order of contribution:
+Tim Riedel
+Jose W. Ruiz
+ 
+Further Information:
+http://cns.utexas.edu/fri
+ 
+Research Educator:
+Timothy Riedel
+triedel@utexas.edu
+ 
+Brief Description of Goal of Code:
+The goal of this app is to quickly assess the symptoms of a patient and methodically sort their symptoms as to either belonging to a cold classification or an allergy classfication. 
+ 
+Known Issues:
+No issues known.
+https://www.w3schools.com/w3css/default.asp
+https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-file
+-->
+	
 <head> 
       <title>Hello World</title>  
       <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -9,33 +34,58 @@
 
 
 <script>
+	/* these variables will serve to determine the percentages of whether
+	attending the doctor may be a good idea, 
+	or if one is better off relaxing */
 	var doctorCount = 0;
 	var chillOutCount = 0;
+	
+	/*anomalie stands for a potential emergency that should not 
+	require much thought before going to the doctor*/
 	var anomalieCount = 0;
 
+	/* this function adds a point to the variable that will store points
+	for going to the doctor*/
 	function doctorPlus(){
 		doctorCount++;
 	}
-
+	/* this function adds a point to the variable that will store points
+	for going to the doctor*/
 	function chillOutPlus(){
 		chillOutCount++;
 	}
 	
+	/*the below functions will add points simultaneously if required,
+	given that a synptom fulfills two or more categories.
+	
+	
+	/* this function adds a point to the variable that will store points
+	for going to the doctor*/
 	function addAll(){
 		doctorCount++;
 		chillOutCount++;
 	}
 	
+	/* this function adds a point to the variable that will store points
+	for going to the doctor*/
 	function addDoctAnomalie(){
 		doctorCount++;
 		anomalieCount++;
 	}
 	
+	// this function does the same thing, but for relaxing
 	function addChillAnomalie(){
 		chillOutCount++;
 		anomalieCount++;
 	}
 	
+	/* this function wil present the results for the last page.
+	Like the last app, all points are added up and serve as a divider,
+	by which each category of points will be divided b. 
+	This will be presented for the percentage of doctor points,
+	and for relaxing points. The other category, anomalie, 
+	will be presented with no ratio. Two points are enough to set up
+	an emergency alert (only after answering each question. */
 	function showResults(){
 		var divisor = doctorCount + chillOutCount;
 		var doctorPercentage = (doctorCount/(doctorCount + chillOutCount))*100 + ("%");
@@ -45,10 +95,17 @@
 		
 		if (anomalieCount == 2){
 			var resultText1 = document.getElementById("results");
-			resultText1.innerHTML = "what's up"
-		} else {
-			resultText1.innerHTML = doctorPercentage + " of our data suggests that you should go to the doctor. " + chillOutPercentage + " of our data suggests that going to the doctor may not be necessary.";
+			resultText1.innerHTML = "We urgently need you go to the doctor. You dshould think much about this as this could be an emergency!"
+		} else if (doctorCount > anomalieCount){
+			resultText1.innerHTML = doctorPercentage + " of our data suggests that you should go to the doctor. " + chillOutPercentage + " of our data suggests that going to the doctor may not be necessary." <br>
+			+ " We highly suggest you go see your doctor. He or she knows what is best. 
+			
+		} else if (anomalieCount > doctorCount){
+			resultText1.innerHTML = doctorPercentage + " of our data suggests that you should go to the doctor. " + chillOutPercentage + " of our data suggests that going to the doctor may not be necessary." <br>
+			+ " We recommend you take it easy with your classes. Remember to take a small break every once and a while and to always exercise, eat, and drink plenty of water. Naps help, too!."	
 		}
+		
+		
 	}
 	
 
@@ -88,7 +145,7 @@
 	<h1>Student Health One Stop: Does your head hurt?</h1>
 </div>	
 	
-<!-- this is a prewritten intro to the app. -->
+<!-- this is a small intro to the purpose of the app, including some disclaimers. -->
 <div id="content" class="w3-container">
 	<p> <p> Having a headache is often unsettling. One ocassional might be no deal, but what if you have them ever couple of days? what about every week?<br>
     <br>
@@ -100,10 +157,16 @@
 	
 	<a href="#one" class="w3-btn w3-grey w3-round"> Get Started </a>
 	
-	<p>The following code has been developed by students and/or researchers of the Freshman Research Initiative DIY Diagnostics Stream at The University of Texas at 		Austin.  This code is shared for demonstration purposes and should not be considered a product -- it is for entertainment purposes only. Any user of this code 			does so at their own risk. Members of the DIY Stream, FRI, and The University of Texas system are not liable for anything related to this code.</p>
+	<p>The following code has been developed by students and/or researchers of the Freshman Research Initiative DIY Diagnostics Stream at The University of Texas at Austin.
+	  This code is shared for demonstration purposes and should not be considered a product -- it is for entertainment purposes only. Any user of this code 			does so at their own risk. Members of the DIY Stream, FRI, and The University of Texas system are not liable for anything related to this code.</p>
  	
+	<!-- this picture is quite good -->
+	<img src="https://media.npr.org/assets/img/2015/05/08/headaches_wide-72d69342b6423e169c14ba3023c6a4aac4e71376-s800-c85.jpg" alt="Art" width="500" height="333">
+	
 	<p>THIS CODE SHOULD NOT BE USED TO DIAGNOSE ANY KIND OF MEDICAL CONDITION.</p>
 
+<!-- all these questions will ask detailed questions with detailed answers, which is why there are so many. 
+No medical science was used here to sort points off. -->
 <div class="page" id="one">
 	
 	<div id="header" class="w3-container w3-flat-carrot">
@@ -117,12 +180,11 @@
                 	<a href="#two" onClick="chillOutPlus();" class="w3-button w3-black"> once a day </a>
                 	<a href="#two" onClick="doctorPlus();" class="w3-button w3-black"> several times a day</a>
                 	<a href="#two" onClick="doctorPlus();" class="w3-button w3-black"> it rarely stops </a>
-			<img src="https://media.npr.org/assets/img/2015/05/08/headaches_wide-72d69342b6423e169c14ba3023c6a4aac4e71376-s800-c85.jpg" alt="Art" width="500" height="333">
     	</div>
 </div>
 	
-<!-- clicking either of the two previous buttons will lead us to this page, because this page has a page id that we told the buttons to bring us to.
-	other than that, the same process unfolds until we get to question six. -->
+<!-- clicking either of the past leads us to this page, and so will go on down this program.
+Same logic applies here-->
 <div class="page" id="two">
 	<div class="w3-container w3-flat-carrot">
 		<h1>Question 2</h1>
@@ -138,6 +200,7 @@
 	</div>
 </div>	
 
+<!-- same logic applies here, and so on. -->
 <div class="page" id="three">
 	<div class="w3-container w3-flat-carrot">
 		<h1>Question 3</h1>
@@ -149,7 +212,8 @@
 			<a href="#four" onClick="doctorPlus();" class="w3-button w3-black">No</a>
 	</div>
 </div>	
-	
+
+<!-- and so on, -->
 <div class="page" id="four">
 	<div class="w3-container w3-flat-carrot">
 		<h1>Question 4</h1>
@@ -164,6 +228,7 @@
 	</div>
 </div>
 	
+<!-- and so on, -->
 <div class="page" id="five"> 
 	<div class= "w3-container w3-flat-carrot">
 		<h1>Question 5</h1>
@@ -178,7 +243,8 @@
 </div>
 		
 	
-<!-- this page has the last question to the app, after that it will bring us to page seven, which has a different set of instructions. -->
+<!-- this page will now display a button which will allow us to get results. 
+Results will be presented along with some advice -->
 <div class="page" id="six"> 
 	<div class= "w3-container w3-flat-carrot">
 		<h1>Results</h1>
